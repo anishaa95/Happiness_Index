@@ -37,71 +37,66 @@
   <body>
 <!-- Page -->
     <div class="container-fluid">
-    
-      <!-- header -->
+
+      <!-- Navbar -->
       <div class="row">
-          <div
-          class="jumbotron jumbotron-fluid"
-          style="
-              background-image: url('https://hbr.org/resources/images/article_assets/2018/10/oct18_26_1040319418.jpg');
-              background-size: cover; background-position: center center;">
-          <div class="col-md-8 offset-md-2" style="background-color: rgba(0, 0, 0, 0.4);">
-            <h1 class="display-4 text-white">Happiness Indicator</h1>
-            <p class="text-light my-3">
-              More than simply positive mood, happiness is a state of
-              well-being that encompasses living a good life, one with a sense
-              of meaning and deep contentment.
-            </p>
+        <div class="shadow fixed-top">
+          <div class="collapse" id="navbarToggleExternalContent">
+            <div class="bg-light">
+              <nav class="navbar navbar-expand navbar-light bg-light">
+                  <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                      <li class="nav-item active">
+                        <a class="nav-link" href="#">Home
+                              <span class="sr-only">(current)</span>
+                            </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                      </li>
+                    </ul>
+                  </div>
+              </nav>
+            </div>
           </div>
+          <nav class="navbar navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="#">The Unconventionalists</a>
+          </nav>
         </div>
       </div>
-        <!-- End of teh Header Component -->
+      
+        <!-- End of Navbar Component -->
+      
+      <!-- header -->
+        <header class="masthead">
+            <div class="row h-100 align-items-center">
+              <div class="col-12 text-center mt-5">
+                <h1 class="display-3 text-light">The Happiness Index</h1>
+                <br>
+                <p class="lead mx-5 text-light">More than simply positive mood, <em class="text-warning">happiness</em> is a state of
+                  well-being that encompasses <em class="text-warning">living a good life</em>, one with a <em class="text-warning">sense
+                  of meaning and deep contentment</em>.</p>
+              </div>
+            </div>
+        </header>
+        <!-- End of the Header Component -->
         
-        <!-- Navbar -->
-        <div class="row">
-          <div class="col">
-            <nav class="navbar navbar-expand navbar-dark bg-dark">
-              <a class="navbar-brand" href="#">Happiness</a>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                  <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Disabled</a>
-                  </li>
-                </ul>
-              </div>
-            </nav>
-          </div>
-        </div>
-          <!-- End of Navbar Component -->
           
-          <main>
-            <div class="row">
-              <div class="col-2 bg-info text-center">
-                <h4 class="pt-5">Lorem Ipsum</h4>
-                <p class="text-light pt-4">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                  sed do eiusmod tempor incididunt ut labore et dolore magna 
-                  aliqua.
-                </p>
-              </div>
-              <div class="col-10">
+        <main>
                 <div class="row">
-                  <div class="col-7">
-                    <h3 class="pt-5">Lorem Ipsum</h3>
+                  <div class="col-7 pl-5">
+                    <h3 class="pt-5">What country is for you?</h3>
                     <p class="text-dark pt-4">
-                      Ut enim ad minim veniam, quis nostrud exercitation 
+                      <strong>Link from Wikipedia</strong> Ut enim ad minim veniam, quis nostrud exercitation 
                       ullamco laboris nisi ut aliquip ex ea commodo consequat. 
                       Duis aute irure dolor in reprehenderit in voluptate velit 
                       esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
@@ -109,7 +104,6 @@
                       anim id est laborum.
                     </p>
                   </div>
-                  
                   <div class="col-5 pr-5 my-5">
                       <!-- Map -->
                       <div id="map"></div>

@@ -1,11 +1,48 @@
-/* 
-.box {
-  min-height: 50px;
-  padding: 5px;
-  margin: 5px;
-  font-weight: 800;
-  color: #fff;
+
+.box_size {
+  min-height: 200px;
+  padding: 0;
+  margin: 0;
+  font-weight: normal;
+  color: #000000;
 }
+
+/* Sliders numbers */
+.form-group {
+	position: relative;
+	margin: 0 auto 3rem;
+  }
+  .form-control-range {
+	width: 100%;
+  }
+  .bubble {
+	background: #2c3e50;
+	color: white;
+	padding: 4px 12px;
+	position: absolute;
+	border-radius: 4px;
+	left: 50%;
+	transform: translateX(-50%);
+	top: 50px;
+  }
+  .bubble::after {
+	content: "";
+	position: absolute;
+	width: 2px;
+	height: 2px;
+	background: #2c3e50;
+	top: -2px;
+	left: 46%;
+  }
+  
+  body {
+	margin: 2rem;
+  }
+
+  $shade-10: #2c3e50 !default;
+$shade-1: #d7dcdf !default;
+$shade-0: #fff !default;
+$teal: #1abc9c !default;
 
 /* Visualization - Color Palette */
 /* .bg_redish {

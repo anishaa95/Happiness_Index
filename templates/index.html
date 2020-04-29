@@ -35,6 +35,7 @@
     <link rel="stylesheet" type="text/css" href="/static/css/map_style.css" />
     <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
     <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet" type="text/css">
+    <!-- <link rel="stylesheet" type="text/css" href="/static/css/main.css" /> -->
   </head>
 
   <!-- Body -->
@@ -156,11 +157,19 @@
                   <form>
                     <div class="form-group">
                       <label for="household_nuclear">Household Nuclear</label>
-                      <input type="range" min="0" max="10" class="form-control-range" id="household_nuclear">
+                      <input type="range" min="0" max="10" step="1" class="form-control-range" id="household_nuclear">
+                      <output class="bubble"></output>
+                    </div>
+                      <div class="form-group">
                       <label for="birthrate">Birth Rate</label>
-                      <input type="range" min="0" max="10" class="form-control-range" id="birthrate">
+                      <input type="range" min="0" max="10" step="1" class="form-control-range" id="birthrate">
+                      <output class="bubble"></output>
+                      </div>
+                      <div class="form-group">
                       <label for="suicide_per_100k">Suicide Rate</label>
-                      <input type="range" min="0" max="10" class="form-control-range" id="suicide_per_100k">
+                      <input type="range" min="0" max="10" step="1" class="form-control-range" id="suicide_per_100k">
+                      <output class="bubble"></output>
+                      </div>
                     </div>
                   </form>
                 </div>
@@ -175,9 +184,13 @@
                       <div class="form-group">
                         <label for="household_size">Household Size</label>
                         <input type="range" class="form-control-range" id="household_size" min="0" max="10">
-                        <label for="number_of_arrivals">Number of People Arriving from Abroad</label>
-                        <input type="range" class="form-control-range" id="number_of_arrivals" min="0" max="10">
+                        <output class="bubble"></output>
                       </div>
+                        <div class="form-group">
+                          <label for="number_of_arrivals">Number of People Arriving from Abroad</label>
+                          <input type="range" class="form-control-range" id="number_of_arrivals" min="0" max="10">
+                          <output class="bubble"></output>
+                        </div>
                     </form>
                   </div>
                   <div class="col-6 py-5">
@@ -210,12 +223,19 @@
                       <form>
                         <div class="form-group">
                           <label for="popdensity_per_mile">Population Density</label>
-                          <input type="range" class="form-control-range" id="popdensity_per_mile">
-                          <label for="percent_in_counrty_travel_growth">Percentage of Country Travel Growth</label>
-                          <input type="range" class="form-control-range" id="percent_in_counrty_travel_growth">
-                          <label for="percent_of_femalepop">Female Population</label>
-                          <input type="range" class="form-control-range" id="percent_of_femalepop">
+                          <input type="range" class="form-control-range" min="0" max="10" id="popdensity_per_mile">
+                          <output class="bubble"></output>
                         </div>
+                          <div class="form-group">
+                            <label for="percent_in_counrty_travel_growth">Percentage of Country Travel Growth</label>
+                            <input type="range" class="form-control-range"  min="0" max="10" id="percent_in_counrty_travel_growth">
+                            <output class="bubble"></output>
+                          </div>
+                          <div class="form-group">
+                            <label for="percent_of_femalepop">Female Population</label>
+                            <input type="range" class="form-control-range"  min="0" max="10" id="percent_of_femalepop">
+                            <output class="bubble"></output>
+                          </div>
                       </form>
                     </div>
                   </div>
@@ -228,9 +248,13 @@
                         <form>
                           <div class="form-group">
                             <label for="percent_self_employed">Self Employment Rate</label>
-                            <input type="range" class="form-control-range" id="percent_self_employed">
+                            <input type="range" class="form-control-range" min="0" max="10" id="percent_self_employed">
+                            <output class="bubble"></output>
+                          </div>
+                          <div class="form-group">
                             <label for="coastline_ratio">Coastline Length</label>
-                            <input type="range" class="form-control-range" id="coastline_ratio">
+                            <input type="range" class="form-control-range" min="0" max="10" id="coastline_ratio">
+                            <output class="bubble"></output>
                           </div>
                         </form>
                       </div>
@@ -250,26 +274,29 @@
             <hr>
           <!-- What country is for you + map section -->
           <section>
-            <div class="row">
-              <div class="col-7">
-                <h1 class="display-5 text-left">What country is for you?</h1>
-                <p class="text-dark pt-4 pl-2">
-                  <strong class="text-info">Link from Wikipedia</strong> Ut enim ad minim veniam, quis nostrud exercitation 
-                  ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                  Duis aute irure dolor in reprehenderit in voluptate velit 
-                  esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
-                  cupidatat non proident, sunt in culpa qui officia deserunt mollit 
-                  anim id est laborum.
-                </p>
-              </div>
-
+            <div class="row box_size">
               <!-- Map -->
               <div class="col-5 pr-4 my-5">
-                <!-- Map -->
+                
                 <div id="map"></div>
                 
                 <!-- Key -->
                 <!-- End of Map Component -->
+              </div>
+           
+              <div class="col-7">
+                <h1 class="display-5 text-left">What country is for you?</h1>
+
+                  <!-- Wiki Search -->
+                    <form class="searchForm">
+                      <input type="search" class="searchForm-input">
+                      <button type="submit" class="icon searchIcon">
+                        <img src="https://image.ibb.co/cpG8zk/search.png" alt="Magnifying Glass Icon">
+                      </button>
+                    </form>
+              
+                  <section class="searchResults"></section>
+              
               </div>
             </div>
           </section>
@@ -314,5 +341,6 @@
       <!-- Create a map object -->
       <script type="text/javascript" src="../static/js/map_logic.js"></script>
       <script type="text/javascript" src="../static/js/main.js"></script>
+      <script type="text/javascript" src="../static/js/wiki.js"></script>
     </body>
 </html>

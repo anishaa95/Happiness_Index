@@ -1,4 +1,4 @@
-
+/* 
 .box {
   min-height: 50px;
   padding: 5px;
@@ -8,7 +8,7 @@
 }
 
 /* Visualization - Color Palette */
-.bg_redish {
+/* .bg_redish {
   background: #ff5345;
 }
 .bg_orange {
@@ -24,11 +24,11 @@
 
 .bg_gray {
   background: #e4e4e4;
-}
+} */
 
 /* Page Color Palette */
 
-.bg_dr_blue {
+/* .bg_dr_blue {
   background-color: #357cbf;
 }
 
@@ -46,12 +46,12 @@
 
 .bg_lgt_gray {
   background-color: rgb(217 218 217);
-}
+} */
 
 
 /* sidebar and title */
 
-html,
+/* html,
 body,
 main.container {
 	height: 100%;
@@ -85,4 +85,4 @@ main .content {
 	vertical-align: top;
 	padding-left: 10px;
 	padding-top: 80px;
-}
+} */ */

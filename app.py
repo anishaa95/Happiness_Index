@@ -53,3 +53,13 @@ def happyness_index():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+
+# Code from Reed
+@app.route('/output',methods=["POST"])
+def get_output():
+    json = request.get_json()
+    input_data = [[json["data"]['E'],json["data"]['S'],json["data"]['G']]]
+#Your logic here
+    print(model_predict_JSON)
+    return jsonify(model_predict_JSON)

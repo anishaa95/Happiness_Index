@@ -28,9 +28,13 @@
       integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
       crossorigin=""
     ></script>
+<!-- D3 -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
 
     <!-- CSS - Style -->
     <link rel="stylesheet" type="text/css" href="/static/css/map_style.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet" type="text/css">
   </head>
 
   <!-- Body -->
@@ -151,14 +155,12 @@
                 <div class="col-6 py-5">
                   <form>
                     <div class="form-group">
-                      <label for="formControlRange">Number of Pubs</label>
-                      <input type="range" class="form-control-range" id="Number_Pubs">
-                      <label for="formControlRange">Coastline Length</label>
-                      <input type="range" class="form-control-range" id="Costline">
-                      <label for="formControlRange">Number of Vacation Days</label>
-                      <input type="range" class="form-control-range" id="vacation_days">
-                      <label for="formControlRange">Family size</label>
-                      <input type="range" class="form-control-range" id="family_size">
+                      <label for="household_nuclear">Household Nuclear</label>
+                      <input type="range" min="0" max="10" class="form-control-range" id="household_nuclear">
+                      <label for="birthrate">Birth Rate</label>
+                      <input type="range" min="0" max="10" class="form-control-range" id="birthrate">
+                      <label for="suicide_per_100k">Suicide Rate</label>
+                      <input type="range" min="0" max="10" class="form-control-range" id="suicide_per_100k">
                     </div>
                   </form>
                 </div>
@@ -171,14 +173,10 @@
                   <div class="col-6 py-5">
                     <form>
                       <div class="form-group">
-                        <label for="formControlRange">Number of Pubs</label>
-                        <input type="range" class="form-control-range" id="Number_Pubs">
-                        <label for="formControlRange">Coastline Length</label>
-                        <input type="range" class="form-control-range" id="Costline">
-                        <label for="formControlRange">Number of Vacation Days</label>
-                        <input type="range" class="form-control-range" id="vacation_days">
-                        <label for="formControlRange">Family size</label>
-                        <input type="range" class="form-control-range" id="family_size">
+                        <label for="household_size">Household Size</label>
+                        <input type="range" class="form-control-range" id="household_size" min="0" max="10">
+                        <label for="number_of_arrivals">Number of People Arriving from Abroad</label>
+                        <input type="range" class="form-control-range" id="number_of_arrivals" min="0" max="10">
                       </div>
                     </form>
                   </div>
@@ -211,14 +209,12 @@
                     <div class="col-6 py-5">
                       <form>
                         <div class="form-group">
-                          <label for="formControlRange">Number of Pubs</label>
-                          <input type="range" class="form-control-range" id="Number_Pubs">
-                          <label for="formControlRange">Coastline Length</label>
-                          <input type="range" class="form-control-range" id="Costline">
-                          <label for="formControlRange">Number of Vacation Days</label>
-                          <input type="range" class="form-control-range" id="vacation_days">
-                          <label for="formControlRange">Family size</label>
-                          <input type="range" class="form-control-range" id="family_size">
+                          <label for="popdensity_per_mile">Population Density</label>
+                          <input type="range" class="form-control-range" id="popdensity_per_mile">
+                          <label for="percent_in_counrty_travel_growth">Percentage of Country Travel Growth</label>
+                          <input type="range" class="form-control-range" id="percent_in_counrty_travel_growth">
+                          <label for="percent_of_femalepop">Female Population</label>
+                          <input type="range" class="form-control-range" id="percent_of_femalepop">
                         </div>
                       </form>
                     </div>
@@ -231,14 +227,10 @@
                       <div class="col-6 py-5">
                         <form>
                           <div class="form-group">
-                            <label for="formControlRange">Number of Pubs</label>
-                            <input type="range" class="form-control-range" id="Number_Pubs">
-                            <label for="formControlRange">Coastline Length</label>
-                            <input type="range" class="form-control-range" id="Costline">
-                            <label for="formControlRange">Number of Vacation Days</label>
-                            <input type="range" class="form-control-range" id="vacation_days">
-                            <label for="formControlRange">Family size</label>
-                            <input type="range" class="form-control-range" id="family_size">
+                            <label for="percent_self_employed">Self Employment Rate</label>
+                            <input type="range" class="form-control-range" id="percent_self_employed">
+                            <label for="coastline_ratio">Coastline Length</label>
+                            <input type="range" class="form-control-range" id="coastline_ratio">
                           </div>
                         </form>
                       </div>
@@ -277,9 +269,6 @@
                 <div id="map"></div>
                 
                 <!-- Key -->
-                <script type="text/javascript" src="../static/js/map_config.js"></script>
-                <!-- Create a map object -->
-                <script type="text/javascript" src="../static/js/map_logic.js"></script>
                 <!-- End of Map Component -->
               </div>
             </div>
@@ -287,39 +276,43 @@
           <br>
           <hr>
           <!-- End of What country is for you + map section -->
-
+          
           <section>
             <h1 class="display-5 text-left">Why this country is for you.</h1>
-                <p class="text-dark pt-4 pl-2">
-                  <strong class="text-info">What is Good</strong> and 
-                  <strong class="text-info">What is Bad</strong>
-                   Ut enim ad minim veniam, quis nostrud exercitation 
-                  ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                  Duis aute irure dolor in reprehenderit in voluptate velit 
-                  esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
-                  cupidatat non proident, sunt in culpa qui officia deserunt mollit 
-                  anim id est laborum.
-                </p>
+            <p class="text-dark pt-4 pl-2">
+              <strong class="text-info">What is Good</strong> and 
+              <strong class="text-info">What is Bad</strong>
+              Ut enim ad minim veniam, quis nostrud exercitation 
+              ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+              Duis aute irure dolor in reprehenderit in voluptate velit 
+              esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
+              cupidatat non proident, sunt in culpa qui officia deserunt mollit 
+              anim id est laborum.
+            </p>
           </section>
         </main>
       </div>
-
-  
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script
+      
+      
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
       crossorigin="anonymous"
-    ></script>
-    <script
+      ></script>
+      <script
       src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
       integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
       crossorigin="anonymous"
-    ></script>
-    <script
+      ></script>
+      <script
       src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
-    ></script>
-  </body>
+      ></script>
+      <script type="text/javascript" src="../static/js/map_config.js"></script>
+      <!-- Create a map object -->
+      <script type="text/javascript" src="../static/js/map_logic.js"></script>
+      <script type="text/javascript" src="../static/js/main.js"></script>
+    </body>
 </html>

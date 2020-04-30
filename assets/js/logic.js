@@ -58,6 +58,8 @@ for ( var i = 0; i < countryshape['features'].length; i ++){
 // second step update the data from within Marcio's results
 
 // make everything below it's own function to reference in the countryshapes function.
+// Here is what I'm calling my function below.
+// function choro_layer (ask alice if I put the console.log in here or if i can just put like 64)
 console.log(data)  // Create a new choropleth layer
   geojson = L.choropleth(data, {
 

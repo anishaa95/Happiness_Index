@@ -46,9 +46,8 @@ function handleSubmit(event) {
 	var c_noc = 25 - pop_householdtype_nochildren.value * 2.5;
 	
 	
-	d3.json("/api/v1.0/happyness_index", function (data) {
-	  console.log(data);
-	  dataset = data;
+	d3.json("/api/v1.0/happyness_index", function (happy) {
+	  dataset = happy;
 	
 	// TBD - perform your magical calculation
 	soc_rank = (s_gdp * .50)+(s_lit*.25)+(s_sd*.20)+(s_br*.05)
@@ -57,10 +56,13 @@ function handleSubmit(event) {
 	pop_rank = (c_fem * .10)+(c_avg*.40)+(c_typ*.40)+(c_noc*.10)
 	user_rank = (soc_rank*.35)+(eco_rank*.35)+(travel_rank*.15)+(pop_rank*.15)
 	
-	for (var i = 0; i < dataset.length; i++) {
-		return dataset[i].dataset['happyscore'] = user_rank
+	// for (var i = 0; i < dataset.length; i++) {
+	// 	dataset[i]['happyscore'] = user_rank
+	// };
+	for ( var i = 0; i < dataset['data'].length; i ++){
+		dataset['data'][i]['user_rank'] = user_rank
 	};
-	
+
 	var ourscore = dataset.overall_rank
 
 	bestCountriestoLiveIn = Object.values(dataset).filter(c => c.happyscore >= ourscore );
@@ -69,27 +71,30 @@ function handleSubmit(event) {
 		bestCountriestoLiveIn: bestCountriestoLiveIn,
 		geoDataforMap: {}
 	};
-	
-	// once you're done with the magical calculation...
-  showOutput(magical_calculation_results);
+	console.log(happy);
 });
+};
 
-function showOutput(magical_calculation_results) {
+	// once you're done with the magical calculation...
+//   showOutput(magical_calculation_results);
+
+
+// function showOutput(magical_calculation_results) {
 	
 // generate some HTML (maybe through d3) - e.g Table
-	const countrylistlocation = document.getElementById("countryList");
+	// const countrylistlocation = document.getElementById("countryList");
 
-	let countries = magical_calculation_results.bestCountriestoLiveIn;
+	// let countries = magical_calculation_results.bestCountriestoLiveIn;
 
-	countrylistlocation.innerHTML = "";
-	countries.forEach( c => {
-		let countryData = document.createElement("li");
-		countryData.innerText = c;
-		countrylistlocation.add(countryData);s
-	});
+	// countrylistlocation.innerHTML = " ";
+	// countries.forEach( c => {
+	// 	let countryData = document.createElement("li");
+	// 	countryData.innerText = c;
+	// 	countrylistlocation.add(countryData);s
+	// });
 
 	// and maybe do something with a map
-}
+
 
 // Calc + For loop + Map
 
@@ -128,4 +133,3 @@ function showOutput(magical_calculation_results) {
 // 	model_group = model_results.Result.Output
 // 	console.log(model_group)
 // 	showOutput(model_group)
-};

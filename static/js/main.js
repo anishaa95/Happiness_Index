@@ -27,7 +27,7 @@ function handleSubmit(event) {
 	// 	25% by 3 sliders
 	var s_gdp = 25 - soc_gdp_percapita.value * 2.5;
 	var s_lit = 25 - soc_literacy_pop.value * 2.5;
-	var s_sd = 25 - soc_suicide.value * 2.5;
+	var s_sd = 25 - soc_suicide_per_100K.value * 2.5;
 	var s_br = 25 - soc_birthrate_cbr.value * 2.5;
 	// 25% by 2 sliders
 	var f_ag = 25 - eco_agriculture.value * 2.5;
@@ -49,12 +49,19 @@ function handleSubmit(event) {
 	d3.json("/api/v1.0/happyness_index", function (data) {
 	  console.log(data);
 	  dataset = data;
-	});
+	
 	// TBD - perform your magical calculation
+	soc_rank = (s_gdp * .50)+(s_lit*.25)+(s_sd*.20)+(s_br*.05)
+	eco_rank = (f_ag * .05)+(f_ind*.30)+(f_ser*.50)+(f_sel*.15)
+	travel_rank = (m_pop * .10)+(m_cos*.20)+(m_inc*.10)+(m_arr*.60)
+	pop_rank = (c_fem * .10)+(c_avg*.40)+(c_typ*.40)+(c_noc*.10)
+	user_rank = (soc_rank*.35)+(eco_rank*.35)+(travel_rank*.15)+(pop_rank*.15)
 	
+	for (var i = 0; i < dataset.length; i++) {
+		return dataset[i].dataset['happyscore'] = user_rank
+	};
 	
-	
-	bestCountriestoLiveIn = dataset.filter( c => c.happyscore >= ourscore );
+	bestCountriestoLiveIn = dataset.filter(function(){c => c.happyscore >= ourscore });
 	
 	let magical_calculation_results = {
 		bestCountriestoLiveIn: bestCountriestoLiveIn,
@@ -63,7 +70,7 @@ function handleSubmit(event) {
 	
 	// once you're done with the magical calculation...
   showOutput(magical_calculation_results);
-}
+});
 
 function showOutput(magical_calculation_results) {
 	
@@ -119,3 +126,4 @@ function showOutput(magical_calculation_results) {
 // 	model_group = model_results.Result.Output
 // 	console.log(model_group)
 // 	showOutput(model_group)
+};

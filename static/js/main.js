@@ -8,19 +8,25 @@ d3.select(sarah).on("click", handleSubmit)
 async function handleSubmit(event) {
 	//retrieve your slider variables and scale them
 		// 	25% by 3 sliders
-		var s_hh_n = 8.33 - household_nuclear.value * 0.833;
-		var s_bt_r = 8.33 - birthrate.value * 0.833;
-		var s_sd = 8.33 - suicide_per_100k.value * 0.833;
+		var s_gdp = 25 - soc_gdp_percapita.value * 2.5;
+		var s_lit = 25 - soc_literacy_%pop.value * 2.5;
+		var s_sd = 25 - soc_suicide_per_100K.value * 2.5;
+		var s_br = 25 - soc_birthrate_cbr.value * 2.5;
 		// 25% by 2 sliders
-		var f_hs = 12.5 - household_size.value * 1.25;
-		var f_nb_a = 12.5 - number_of_arrivals.value * 1.25;
+		var f_ag = 25 - eco_%agriculture.value * 2.5;
+		var f_ind = 25 - eco_%industry.value * 2.5;
+		var f_ser = 25 - eco_%service.value * 2.5;
+		var f_sel = 25 - eco_%self_employed.value * 2.5;
 		// 25% by 3 sliders
-		var c_pd = 8.33 - popdensity_per_mile.value * 0.833;
-		var c_pct = 8.33 - percent_in_counrty_travel_growth.value * 0.833;
-		var c_pfp = 8.33 - percent_of_femalepop.value * 0.833;
+		var m_pop = 25 - travel_popdensity_/sqmile.value * 2.5;
+		var m_cos = 25 - travel_coastline_%ratio.value * 2.5;
+		var m_inc = 25 - travel_incountry_%growth.value * 2.5;
+		var m_arr = 25 - travel_no_of_arrivals.value * 2.5;
 		//  25% by 2 sliders
-		var p_p_se = 12.5 - percent_self_employed.value * 1.25;
-		var p_cl_r = 12.5 - coastline_ratio.value * 1.25
+		var c_fem = 25 - pop_%female.value * 2.5;
+		var c_avg = 25 - pop_%avghousehold_size.value * 2.5;
+		var c_typ = 25 - pop_%householdtype_nuclear.value * 2.5;
+		var c_noc = 25 - pop_%householdtype_nochildren.value * 2.5;
 		
 	};
 		// Calc + For loop + Map 

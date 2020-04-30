@@ -156,20 +156,24 @@
                 <div class="col-6 py-5">
                   <form>
                     <div class="form-group">
-                      <label for="household_nuclear">Household Nuclear</label>
-                      <input type="range" min="0" max="10" step="1" class="form-control-range" id="household_nuclear">
+                      <label for="soc_gdp_percapita">GDP Per Capita</label>
+                      <input type="range" min="0" max="10" step="1" class="form-control-range" id="soc_gdp_percapita">
                       <output class="bubble"></output>
                     </div>
-                      <div class="form-group">
-                      <label for="birthrate">Birth Rate</label>
-                      <input type="range" min="0" max="10" step="1" class="form-control-range" id="birthrate">
+                    <div class="form-group">
+                      <label for="soc_literacy_%pop">Literacy Rate</label>
+                      <input type="range" min="0" max="10" step="1" class="form-control-range" id="soc_literacy_%pop">
                       <output class="bubble"></output>
-                      </div>
-                      <div class="form-group">
-                      <label for="suicide_per_100k">Suicide Rate</label>
+                    </div>
+                    <div class="form-group">
+                      <label for="soc_suicide_per_100K">Suicide Rate</label>
                       <input type="range" min="0" max="10" step="1" class="form-control-range" id="suicide_per_100k">
                       <output class="bubble"></output>
-                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="soc_birthrate_cbr">Birth Rate</label>
+                      <input type="range" min="0" max="10" step="1" class="form-control-range" id="soc_birthrate_cbr">
+                      <output class="bubble"></output>
                     </div>
                   </form>
                 </div>
@@ -182,13 +186,23 @@
                   <div class="col-6 py-5">
                     <form>
                       <div class="form-group">
-                        <label for="household_size">Household Size</label>
-                        <input type="range" class="form-control-range" id="household_size" min="0" max="10">
+                        <label for="eco_%agriculture">Agriculture</label>
+                        <input type="range" class="form-control-range" id="eco_%agriculture" min="0" max="10">
                         <output class="bubble"></output>
                       </div>
                         <div class="form-group">
-                          <label for="number_of_arrivals">Number of People Arriving from Abroad</label>
-                          <input type="range" class="form-control-range" id="number_of_arrivals" min="0" max="10">
+                          <label for="eco_%industry">Industry</label>
+                          <input type="range" class="form-control-range" id="eco_%industry" min="0" max="10">
+                          <output class="bubble"></output>
+                        </div>
+                        <div class="form-group">
+                          <label for="eco_%service">Industry</label>
+                          <input type="range" class="form-control-range" id="eco_%service" min="0" max="10">
+                          <output class="bubble"></output>
+                        </div>
+                        <div class="form-group">
+                          <label for="eco_%self_employed">Industry</label>
+                          <input type="range" class="form-control-range" id="eco_%self_employed" min="0" max="10">
                           <output class="bubble"></output>
                         </div>
                     </form>
@@ -207,10 +221,10 @@
                 <!-- End of Financial Well-Being + Sliders section -->
               </section>
               <section>
-                <!-- Community Well-Being + Sliders section -->
+                <!-- Mobility Well-Being + Sliders section -->
                   <div class="row">
                     <div class="col-6 py-5">
-                      <h1 class="display-5 text-left">Community Well-Being</h1>
+                      <h1 class="display-5 text-left">Mobility Well-Being</h1>
                       <h5 class="text-secondary">Excepteur sint occaecat.</h5>
                       <p class="text-dark pt-4 pl-2">
                         Duis aute irure dolor in reprehenderit in voluptate velit 
@@ -222,38 +236,53 @@
                     <div class="col-6 py-5">
                       <form>
                         <div class="form-group">
-                          <label for="popdensity_per_mile">Population Density</label>
-                          <input type="range" class="form-control-range" min="0" max="10" id="popdensity_per_mile">
+                          <label for="travel_popdensity_/sqmile">Population Density</label>
+                          <input type="range" class="form-control-range" min="0" max="10" id="travel_popdensity_/sqmile">
                           <output class="bubble"></output>
                         </div>
                           <div class="form-group">
-                            <label for="percent_in_counrty_travel_growth">Percentage of Country Travel Growth</label>
-                            <input type="range" class="form-control-range"  min="0" max="10" id="percent_in_counrty_travel_growth">
+                            <label for="travel_coastline_%ratio">Coastline Length</label>
+                            <input type="range" class="form-control-range"  min="0" max="10" id="travel_coastline_%ratio">
                             <output class="bubble"></output>
                           </div>
                           <div class="form-group">
-                            <label for="percent_of_femalepop">Female Population</label>
-                            <input type="range" class="form-control-range"  min="0" max="10" id="percent_of_femalepop">
+                            <label for="travel_incountry_%growth">Travel Incountry Growth</label>
+                            <input type="range" class="form-control-range"  min="0" max="10" id="travel_incountry_%growth">
+                            <output class="bubble"></output>
+                          </div>
+                          <div class="form-group">
+                            <label for="travel_no_of_arrivals">Number of airplane arrivals</label>
+                            <input type="range" class="form-control-range"  min="0" max="10" id="travel_no_of_arrivals">
                             <output class="bubble"></output>
                           </div>
                       </form>
                     </div>
                   </div>
-                  <!-- End of Community Well-Being + Sliders section -->
+                  <!-- End of Mobility Well-Being + Sliders section -->
                 </section>
                 <section>
-                  <!-- Physical Well-Being + Sliders section -->
+                  <!-- Community Well-Being + Sliders section -->
                     <div class="row">
                       <div class="col-6 py-5">
                         <form>
                           <div class="form-group">
-                            <label for="percent_self_employed">Self Employment Rate</label>
-                            <input type="range" class="form-control-range" min="0" max="10" id="percent_self_employed">
+                            <label for="pop_%female">Female Percentage</label>
+                            <input type="range" class="form-control-range" min="0" max="10" id="pop_%female">
                             <output class="bubble"></output>
                           </div>
                           <div class="form-group">
-                            <label for="coastline_ratio">Coastline Length</label>
-                            <input type="range" class="form-control-range" min="0" max="10" id="coastline_ratio">
+                            <label for="pop_%avghousehold_size">Household Size</label>
+                            <input type="range" class="form-control-range" min="0" max="10" id="pop_%avghousehold_size">
+                            <output class="bubble"></output>
+                          </div>
+                          <div class="form-group">
+                            <label for="pop_%householdtype_nuclear">Household Nuclear</label>
+                            <input type="range" class="form-control-range" min="0" max="10" id="pop_%householdtype_nuclear">
+                            <output class="bubble"></output>
+                          </div>
+                          <div class="form-group">
+                            <label for="pop_%householdtype_nochildren">Household Type - No children</label>
+                            <input type="range" class="form-control-range" min="0" max="10" id="pop_%householdtype_nochildren">
                             <output class="bubble"></output>
                           </div>
                         </form>

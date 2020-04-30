@@ -13,7 +13,7 @@ import json
 #################################################
 
 engine = create_engine(
-    "postgres://AnishaaDeSilva:@localhost:5432/HappinessData")
+    "postgres://marciooliver:@localhost:5432/HappinessData")
 
 # reflect an existing database into a new model
 Base = automap_base()
@@ -23,7 +23,7 @@ Base.prepare(engine, reflect=True)
 
 # Save reference to the table
 # print(Base.classes)
-Happiness = Base.classes.happiness
+Happiness = Base.classes.happyness
 
 #################################################
 # Flask Setup
@@ -39,7 +39,7 @@ app = Flask(__name__)
 # Home page rendering html template
 @app.route("/")
 def index():
-    data = engine.execute("SELECT * FROM happiness")
+    data = engine.execute("SELECT * FROM happyness")
     return render_template("index.html", data=data)
 
 
@@ -47,7 +47,7 @@ def index():
 @app.route("/api/v1.0/happyness_index")
 def happyness_index():
     # Get all data from DB
-    data = engine.execute("SELECT * FROM happiness")
+    data = engine.execute("SELECT * FROM happyness")
     # jsonify data to render template
     return jsonify({'data': [dict(row) for row in data]})
 

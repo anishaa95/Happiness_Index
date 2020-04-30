@@ -70,26 +70,28 @@ function handleSubmit(event) {
 		geoDataforMap: {}
 	};
 	
-	// once you're done with the magical calculation...
-  showOutput(magical_calculation_results);
 });
+};
+	// once you're done with the magical calculation...
+//   showOutput(magical_calculation_results);
+// });
 
-function showOutput(magical_calculation_results) {
+// function showOutput(magical_calculation_results) {
 	
-// generate some HTML (maybe through d3) - e.g Table
-	const countrylistlocation = document.getElementById("countryList");
+// // generate some HTML (maybe through d3) - e.g Table
+// 	const countrylistlocation = document.getElementById("countryList");
 
-	let countries = magical_calculation_results.bestCountriestoLiveIn;
+// 	let countries = magical_calculation_results.bestCountriestoLiveIn;
 
-	countrylistlocation.innerHTML = "";
-	countries.forEach( c => {
-		let countryData = document.createElement("li");
-		countryData.innerText = c;
-		countrylistlocation.add(countryData);s
-	});
+// 	countrylistlocation.innerHTML = "";
+// 	countries.forEach( c => {
+// 		let countryData = document.createElement("li");
+// 		countryData.innerText = c;
+// 		countrylistlocation.add(countryData);s
+// 	});
 
 	// and maybe do something with a map
-}
+
 
 // Calc + For loop + Map
 
@@ -128,4 +130,3 @@ function showOutput(magical_calculation_results) {
 // 	model_group = model_results.Result.Output
 // 	console.log(model_group)
 // 	showOutput(model_group)
-};

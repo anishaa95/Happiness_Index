@@ -23,7 +23,7 @@ Base.prepare(engine, reflect=True)
 
 # Save reference to the table
 # print(Base.classes)
-Happiness = Base.classes.happyness
+Happiness = Base.classes.happiness
 
 #################################################
 # Flask Setup
@@ -39,7 +39,7 @@ app = Flask(__name__)
 # Home page rendering html template
 @app.route("/")
 def index():
-    data = engine.execute("SELECT * FROM happyness")
+    data = engine.execute("SELECT * FROM happiness")
     return render_template("index.html", data=data)
 
 
@@ -47,7 +47,7 @@ def index():
 @app.route("/api/v1.0/happyness_index")
 def happyness_index():
     # Get all data from DB
-    data = engine.execute("SELECT * FROM happyness")
+    data = engine.execute("SELECT * FROM happiness")
     # jsonify data to render template
     return jsonify({'data': [dict(row) for row in data]})
 

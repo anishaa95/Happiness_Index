@@ -1,8 +1,8 @@
 var dataset = {};
 
-let element = document.querySelector('button');
-element.onclick = handleSubmit;
-// d3.select(sarah).on("click", handleSubmit);
+var button = d3.select("#button");
+
+button.on("click", handleSubmit);
 
 // Code from Reed
 function handleSubmit(event) {
@@ -27,7 +27,7 @@ function handleSubmit(event) {
 	// 	25% by 3 sliders
 	var s_gdp = 25 - soc_gdp_percapita.value * 2.5;
 	var s_lit = 25 - soc_literacy_pop.value * 2.5;
-	var s_sd = 25 - soc_suicide_per_100K.value * 2.5;
+	var s_sd = 25 - soc_suicide.value * 2.5;
 	var s_br = 25 - soc_birthrate_cbr.value * 2.5;
 	// 25% by 2 sliders
 	var f_ag = 25 - eco_agriculture.value * 2.5;

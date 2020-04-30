@@ -1,8 +1,8 @@
-console.log("loaded")
 
 d3.json("/api/v1.0/happyness_index", function(data) {
 	console.log(data)
 }) 
+d3.select(sarah).on("click", handleSubmit) 
 
 // Code from Reed
 async function handleSubmit(event) {
@@ -21,8 +21,9 @@ async function handleSubmit(event) {
 		//  25% by 2 sliders
 		var p_p_se = 12.5 - percent_self_employed.value * 1.25;
 		var p_cl_r = 12.5 - coastline_ratio.value * 1.25
-
 		
+	};
+		// Calc + For loop + Map 
 		
 	// 	// console.log(var_name); // (10X)
 	// 	event.preventDefault();
@@ -59,4 +60,3 @@ async function handleSubmit(event) {
 	// 	model_group = model_results.Result.Output
 	// 	console.log(model_group)
 	// 	showOutput(model_group)
-	};

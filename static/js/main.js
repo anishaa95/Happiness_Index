@@ -8,7 +8,7 @@ button.on("click", handleSubmit);
 function handleSubmit(event) {
 	const soc_gdp_percapita = document.getElementById("soc_gdp_percapita");
 	const soc_literacy_pop = document.getElementById("soc_literacy_pop");
-	const soc_suicide_per_100K = document.getElementById("soc_suicide_per_100K");
+	const soc_suicide_per_100K = document.getElementById("soc_suicide");
 	const soc_birthrate_cbr = document.getElementById("soc_birthrate_cbr");
 	const eco_agriculture = document.getElementById("eco_agriculture");
 	const eco_industry = document.getElementById("eco_industry");
@@ -61,7 +61,9 @@ function handleSubmit(event) {
 		return dataset[i].dataset['happyscore'] = user_rank
 	};
 	
-	bestCountriestoLiveIn = dataset.filter(function(){c => c.happyscore >= ourscore });
+	var ourscore = dataset.overall_rank
+
+	bestCountriestoLiveIn = Object.values(dataset).filter(c => c.happyscore >= ourscore );
 	
 	let magical_calculation_results = {
 		bestCountriestoLiveIn: bestCountriestoLiveIn,
@@ -79,7 +81,7 @@ function showOutput(magical_calculation_results) {
 
 	let countries = magical_calculation_results.bestCountriestoLiveIn;
 
-	countylistlocation.innerHTML = "";
+	countrylistlocation.innerHTML = "";
 	countries.forEach( c => {
 		let countryData = document.createElement("li");
 		countryData.innerText = c;

@@ -40,7 +40,7 @@ app = Flask(__name__)
 @app.route("/")
 def index():
     # data = engine.execute("SELECT * FROM happyness")
-    return render_template("index.html", data=data)
+    return render_template("choro_index.html", data=data)
 
 
 # Jsonify data route

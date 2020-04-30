@@ -18,14 +18,46 @@ var geoData = '/data'
 // getJSON("static/data/world_map_rank.geojson", function(json) {
 //   console.log(json);
 // });
-
-// getJSON(); 
-
 var geojson;
+var countryshapes
+// getJSON(); 
+d3.json(geoData, function(data) {
+  countryshape = data
+});
 
 // Grab data with d3
-d3.json(geoData, function(data) {
+// This takes the geojson file and turns in into a list of dictionaries
+// recreate what you did in pandas here.
+// Structure Sarah recommends Marcio's score has it be output in a dict where values are scores and countries are keys
+for ( var i = 0; i < countryshape['features'].length; i ++){
+    try:
+    countryshape['features'][i]['properties']['overall_rank'] = "/api/v1.0/happyness_index"[countryshape['features'][i]['properties']['admin']]
+    except KeyError:
+        if:
+            x['properties']['overall_rank'] = "/api/v1.0/happyness_index"[x['properties']['name_sort']]
+        //  If i fix North & South Korea I don't need the lines
+            // except KeyError:
+        //     try:
+        //         x['properties']['overall_rank'] = "/api/v1.0/happyness_index"[x['properties']['name']]
+        //     except KeyError:
+        //         try:
+        //             country = x['properties']['admin']
+        //             if country == 'North Korea':
+        //                 x['properties']['overall_rank'] = "/api/v1.0/happyness_index"['Korea, North']
+        //                 continue
+        //             if country == 'South Korea':
+        //                 x['properties']['overall_rank'] = happiness_dict['Korea, South']
+        //                 continue
+        //             x['properties']['overall_rank'] = happiness_dict[country]
+                // except:
+                //     print(country)
+                //     x['properties']['overall_rank'] = "NA"}
 
+
+// first step reading in the geojson
+// second step update the data from within Marcio's results
+
+// make everything below it's own function to reference in the countryshapes function.
 console.log(data)  // Create a new choropleth layer
   geojson = L.choropleth(data, {
 
@@ -82,4 +114,4 @@ console.log(data)  // Create a new choropleth layer
   // // Adding legend to the map
   // legend.addTo(myMap);
 
-});
+

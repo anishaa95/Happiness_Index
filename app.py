@@ -56,10 +56,9 @@ if __name__ == "__main__":
 
 
 # Code from Reed
-@app.route('/output',methods=["POST"])
-def get_output():
-    json = request.get_json()
-    input_data = [[json["data"]['S1'],json["data"]['S2'],json["data"]['S3'],[json["data"]['F1'],json["data"]['F2'],json["data"]['C1'],[json["data"]['C2'],json["data"]['C3'],json["data"]['P1'],json["data"]['P2']]]
-#Your logic here
-    # print(model_predict_JSON)
-    # return jsonify(model_predict_JSON)
+# @app.route('/output',methods=["POST"])
+# def get_output():
+#     json = request.get_json()
+#     input_data = [[json["data"]['S1'],json["data"]['S2'],json["data"]['S3'],[json["data"]['F1'],json["data"]['F2'],json["data"]['C1'],[json["data"]['C2'],json["data"]['C3'],json["data"]['P1'],json["data"]['P2']]]
+
+#     return "marcio"

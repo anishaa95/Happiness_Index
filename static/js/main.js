@@ -1,4 +1,8 @@
+console.log("loaded")
 
+d3.json("/api/v1.0/happyness_index", function(data) {
+	console.log(data)
+}) 
 
 // Code from Reed
 async function handleSubmit(event) {
@@ -18,39 +22,41 @@ async function handleSubmit(event) {
 		var p_p_se = 12.5 - percent_self_employed.value * 1.25;
 		var p_cl_r = 12.5 - coastline_ratio.value * 1.25
 
-		// console.log(var_name); // (10X)
-		event.preventDefault();
-		let json = {
-			method: "POST",
-			mode: "cors",
-			cache: "no-cache",
-			credentials: "same-origin",
-			headers: {
-				"Content-Type": "application/json"
-			},
-			redirect: "follow",
-			referrer: "no-referrer",
-			body: JSON.stringify(
-				{
-					data: {
-						"S1": s_hh_n,
-						"S2": s_bt_r,
-						"S3": s_sd,
-						"F1": f_hs,
-						"F2": f_nb_a,
-						"C1": c_pd,
-						"C2": c_pct,
-						"C3": c_pfp,
-						"P1": p_p_se,
-						"P2": p_cl_r,
-					}
-				})
-		}
-		console.log(json);
-		const result = await fetch('/output', json);
-		const result_json = await result.json();
-		model_results = JSON.parse(result_json)
-		model_group = model_results.Result.Output
-		console.log(model_group)
-		showOutput(model_group)
+		
+		
+	// 	// console.log(var_name); // (10X)
+	// 	event.preventDefault();
+	// 	let json = {
+	// 		method: "POST",
+	// 		mode: "cors",
+	// 		cache: "no-cache",
+	// 		credentials: "same-origin",
+	// 		headers: {
+	// 			"Content-Type": "application/json"
+	// 		},
+	// 		redirect: "follow",
+	// 		referrer: "no-referrer",
+	// 		body: JSON.stringify(
+	// 			{
+	// 				data: {
+	// 					"S1": s_hh_n,
+	// 					"S2": s_bt_r,
+	// 					"S3": s_sd,
+	// 					"F1": f_hs,
+	// 					"F2": f_nb_a,
+	// 					"C1": c_pd,
+	// 					"C2": c_pct,
+	// 					"C3": c_pfp,
+	// 					"P1": p_p_se,
+	// 					"P2": p_cl_r,
+	// 				}
+	// 			})
+	// 	}
+	// 	console.log(json);
+	// 	const result = await fetch('/output', json);
+	// 	const result_json = await result.json();
+	// 	model_results = JSON.parse(result_json)
+	// 	model_group = model_results.Result.Output
+	// 	console.log(model_group)
+	// 	showOutput(model_group)
 	};

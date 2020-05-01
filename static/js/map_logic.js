@@ -14,7 +14,6 @@ L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 
 // Load in geojson data
 var geoData = '../static/data/world_map_rank.geojson';
-// var geoData = '/data'
 
 // getJSON("static/data/world_map_rank.geojson", function(json) {
 //   console.log(json);
@@ -45,7 +44,7 @@ function plotting(d){// console.log(data)  // Create a new choropleth layer
     scale: ["#7B68EE", "#ADFF2F"],
 
     // Number of breaks in step range
-    steps: 10,
+    steps: 17,
 
     // q for quartile, e for equidistant, k for k-means
     mode: "q",
@@ -90,52 +89,3 @@ function plotting(d){// console.log(data)  // Create a new choropleth layer
 
   // // Adding legend to the map
   // legend.addTo(myMap);
-
-//  Below you will find notes and commented out code from the previous non-static attempts
-
-// getJSON("static/data/world_map_rank.geojson", function(json) {
-//   console.log(json);
-// });
-// var geojson;
-// var countryshapes;
-// var user_rankings = dataset
-// // getJSON(); 
-// d3.json(geoData, function(data) {
-//   countryshape = data
-// });
-
-// Grab data with d3
-// This takes the geojson file and turns in into a list of dictionaries
-// recreate what you did in pandas here.
-// Structure Sarah recommends Marcio's score has it be output in a dict where values are scores and countries are keys
-// for ( var i = 0; i < countryshape['features'].length; i ++){
-//     countryshape['features'][i]['properties']['user_rank'] = dataset['user_rank'][countryshape['features'][i]['properties']['admin']]
-    // except KeyError:
-        // if:
-        //     x['properties']['overall_rank'] = "/api/v1.0/happyness_index"[x['properties']['name_sort']]
-        //  If i fix North & South Korea I don't need the lines
-            // except KeyError:
-        //     try:
-        //         x['properties']['overall_rank'] = "/api/v1.0/happyness_index"[x['properties']['name']]
-        //     except KeyError:
-        //         try:
-        //             country = x['properties']['admin']
-        //             if country == 'North Korea':
-        //                 x['properties']['overall_rank'] = "/api/v1.0/happyness_index"['Korea, North']
-        //                 continue
-        //             if country == 'South Korea':
-        //                 x['properties']['overall_rank'] = happiness_dict['Korea, South']
-        //                 continue
-        //             x['properties']['overall_rank'] = happiness_dict[country]
-                // except:
-                //     print(country)
-                //     x['properties']['overall_rank'] = "NA"}
-
-
-// first step reading in the geojson
-// second step update the data from within Marcio's results
-
-// make everything below it's own function to reference in the countryshapes function.
-// Here is what I'm calling my function below.
-// function choro_layer (ask alice if I put the console.log in here or if i can just put like 64)
-

@@ -27,7 +27,7 @@ function handleSubmit(event) {
 	// 	25% by 3 sliders
 	var s_gdp = 25 - soc_gdp_percapita.value * 2.5;
 	var s_lit = 25 - soc_literacy_pop.value * 2.5;
-	var s_sd = 25 - soc_suicide_per_100K.value * 2.5;
+	var s_sd = 25 - soc_suicide.value * 2.5;
 	var s_br = 25 - soc_birthrate_cbr.value * 2.5;
 	// 25% by 2 sliders
 	var f_ag = 25 - eco_agriculture.value * 2.5;
@@ -44,8 +44,6 @@ function handleSubmit(event) {
 	var c_avg = 25 - pop_avghousehold_size.value * 2.5;
 	var c_typ = 25 - pop_householdtype_nuclear.value * 2.5;
 	var c_noc = 25 - pop_householdtype_nochildren.value * 2.5;
-
-
 
 	d3.json("/api/v1.0/happyness_index", function (happy) {
 		dataset = happy;
@@ -110,62 +108,28 @@ function handleSubmit(event) {
 		console.log(happy);
 	});
 };
-
 	// once you're done with the magical calculation...
 //   showOutput(magical_calculation_results);
-
+// });
 
 // function showOutput(magical_calculation_results) {
-
 // generate some HTML (maybe through d3) - e.g Table
 	// const countrylistlocation = document.getElementById("countryList");
+// 	let countries = magical_calculation_results.bestCountriestoLiveIn;
 
-	// let countries = magical_calculation_results.bestCountriestoLiveIn;
-
-	// countrylistlocation.innerHTML = " ";
-	// countries.forEach( c => {
-	// 	let countryData = document.createElement("li");
-	// 	countryData.innerText = c;
-	// 	countrylistlocation.add(countryData);s
-	// });
+// 	countrylistlocation.innerHTML = "";
+// 	countries.forEach( c => {
+// 		let countryData = document.createElement("li");
+// 		countryData.innerText = c;
+// 		countrylistlocation.add(countryData);s
+// 	});
 
 	// and maybe do something with a map
 
+// function showOutput(magical_calculation_results) {
+//   // generate some HTML (maybe through d3) - e.g Table
+//   const countrylistlocation = document.getElementById("summary");
 
-// Calc + For loop + Map
+//   let countries = magical_calculation_results.bestCountriestoLiveIn;
 
-// 	// console.log(var_name); // (10X)
-// 	event.preventDefault();
-// 	let json = {
-// 		method: "POST",
-// 		mode: "cors",
-// 		cache: "no-cache",
-// 		credentials: "same-origin",
-// 		headers: {
-// 			"Content-Type": "application/json"
-// 		},
-// 		redirect: "follow",
-// 		referrer: "no-referrer",
-// 		body: JSON.stringify(
-// 			{
-// 				data: {
-// 					"S1": s_hh_n,
-// 					"S2": s_bt_r,
-// 					"S3": s_sd,
-// 					"F1": f_hs,
-// 					"F2": f_nb_a,
-// 					"C1": c_pd,
-// 					"C2": c_pct,
-// 					"C3": c_pfp,
-// 					"P1": p_p_se,
-// 					"P2": p_cl_r,
-// 				}
-// 			})
-// 	}
-// 	console.log(json);
-// 	const result = await fetch('/output', json);
-// 	const result_json = await result.json();
-// 	model_results = JSON.parse(result_json)
-// 	model_group = model_results.Result.Output
-// 	console.log(model_group)
-// 	showOutput(model_group)
+

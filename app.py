@@ -40,22 +40,22 @@ app = Flask(__name__)
 @app.route("/")
 def index():
     # data = engine.execute("SELECT * FROM happyness")
-    return render_template("choro_index.html", data=data)
+    return render_template("choro_index.html")
 
 
 # Jsonify data route
-@app.route("/api/v1.0/happyness_index")
-def happyness_index():
-    # Get all data from DB
-    data = engine.execute("SELECT * FROM happyness")
-    # jsonify data to render template
-    return jsonify({'data': [dict(row) for row in data]})
+# @app.route("/api/v1.0/happyness_index")
+# def happyness_index():
+#     # Get all data from DB
+#     data = engine.execute("SELECT * FROM happyness")
+#     # jsonify data to render template
+#     return jsonify({'data': [dict(row) for row in data]})
 
-@app.route('/data')
-def data():
-    with open('/Users/josephgeglia/Desktop/GW Data Analytics/Group Projects/Happines_Index_My_Copy/choropleth_test/static/data/world_map_rank.geojson',"r") as f:
-        mygeojson = json.load(f)
-    return jsonify([mygeojson])
+# @app.route('/data')
+# def data():
+#     with open('/Users/josephgeglia/Desktop/GW Data Analytics/Group Projects/Happines_Index_My_Copy/choropleth_test/static/data/world_map_rank.geojson',"r") as f:
+#         mygeojson = json.load(f)
+#     return jsonify([mygeojson])
 
 
 if __name__ == "__main__":

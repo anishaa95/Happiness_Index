@@ -42,7 +42,7 @@ function plotting(d){// console.log(data)  // Create a new choropleth layer
     valueProperty: "overall_rank",
 
     // Set color scale
-    scale: ["#ffffb2", "#b10026"],
+    scale: ["#7B68EE", "#ADFF2F"],
 
     // Number of breaks in step range
     steps: 10,

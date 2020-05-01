@@ -99,7 +99,7 @@ function handleSubmit(event) {
 
 		sorted_data = bestCountriestoLiveIn.sort(c => c.user_rank)
 
-		// console.log(sorted_data)
+		console.log(sorted_data)
 
 		let magical_calculation_results = {
 			bestCountriestoLiveIn: bestCountriestoLiveIn,

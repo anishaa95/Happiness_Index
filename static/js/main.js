@@ -78,12 +78,20 @@ function handleSubmit(event) {
 			var user_c_typ = dataset['data'][i]['pop_householdtype_nuclear']
 			var user_c_noc = dataset['data'][i]['pop_householdtype_numberchildren']
 
-			//Calculations
-			soc_rank = (s_gdp * user_s_gdp) + (s_lit * user_s_lit) + (s_sd * user_s_sd) + (s_br * user_s_br)
-			eco_rank = (f_ag * user_f_ag) + (f_ind * user_f_ind) + (f_ser * user_f_ser) + (f_sel * user_f_sel)
-			travel_rank = (m_pop * user_m_pop) + (m_cos * user_m_cos) + (m_inc * user_m_inc) + (m_arr * user_m_arr)
-			pop_rank = (c_fem * user_c_fem) + (c_avg * user_c_avg) + (c_typ * user_c_typ) + (c_noc * user_c_noc)
-			user_rank = Math.round((soc_rank * .35)+ (eco_rank * .35) + (travel_rank * .15) + (pop_rank * .15))
+			// 	//Calculations
+			// 	soc_rank = (s_gdp * user_s_gdp) + (s_lit * user_s_lit) + (s_sd * user_s_sd) + (s_br * user_s_br)
+			// 	eco_rank = (f_ag * user_f_ag) + (f_ind * user_f_ind) + (f_ser * user_f_ser) + (f_sel * user_f_sel)
+			// 	travel_rank = (m_pop * user_m_pop) + (m_cos * user_m_cos) + (m_inc * user_m_inc) + (m_arr * user_m_arr)
+			// 	pop_rank = (c_fem * user_c_fem) + (c_avg * user_c_avg) + (c_typ * user_c_typ) + (c_noc * user_c_noc)
+			// 	user_rank = Math.round((soc_rank * .35)+ (eco_rank * .35) + (travel_rank * .15) + (pop_rank * .15))
+			// 	dataset['data'][i]['user_rank'] = user_rank
+			// };
+
+			soc_rank = (s_gdp * .50) + (s_lit * .30) + (s_sd * .15) + (s_br * .05)
+			eco_rank = (f_ag * .30) + (f_ind * .50) + (f_ser * .05) + (f_sel * .15)
+			travel_rank = (m_pop * .05) + (m_cos * .15) + (m_inc * .30) + (m_arr * .50)
+			pop_rank = (c_fem * .15) + (c_avg * .05) + (c_typ * .50) + (c_noc * .30)
+			user_rank = Math.round((soc_rank * .35) + (eco_rank * .35) + (travel_rank * .15) + (pop_rank * .15))
 			dataset['data'][i]['user_rank'] = user_rank
 		};
 

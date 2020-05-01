@@ -22,7 +22,7 @@ function handleSubmit(event) {
 	const pop_avghousehold_size = document.getElementById("pop_avghousehold_size");
 	const pop_householdtype_nuclear = document.getElementById("pop_householdtype_nuclear");
 	const pop_householdtype_nochildren = document.getElementById("pop_householdtype_nochildren");
-	
+
 	//retrieve your slider variables and scale them
 	// 	25% by 3 sliders
 	var s_gdp = 25 - soc_gdp_percapita.value * 2.5;
@@ -44,35 +44,65 @@ function handleSubmit(event) {
 	var c_avg = 25 - pop_avghousehold_size.value * 2.5;
 	var c_typ = 25 - pop_householdtype_nuclear.value * 2.5;
 	var c_noc = 25 - pop_householdtype_nochildren.value * 2.5;
-	
-	
+
+
+
 	d3.json("/api/v1.0/happyness_index", function (happy) {
-	  dataset = happy;
-	
-	// TBD - perform your magical calculation
-	soc_rank = (s_gdp * .50)+(s_lit*.25)+(s_sd*.20)+(s_br*.05)
-	eco_rank = (f_ag * .05)+(f_ind*.30)+(f_ser*.50)+(f_sel*.15)
-	travel_rank = (m_pop * .10)+(m_cos*.20)+(m_inc*.10)+(m_arr*.60)
-	pop_rank = (c_fem * .10)+(c_avg*.40)+(c_typ*.40)+(c_noc*.10)
-	user_rank = (soc_rank*.35)+(eco_rank*.35)+(travel_rank*.15)+(pop_rank*.15)
-	
-	// for (var i = 0; i < dataset.length; i++) {
-	// 	dataset[i]['happyscore'] = user_rank
-	// };
-	for ( var i = 0; i < dataset['data'].length; i ++){
-		dataset['data'][i]['user_rank'] = user_rank
-	};
+		dataset = happy;
 
-	var ourscore = dataset.overall_rank
+		// TBD - perform your magical calculation
 
-	bestCountriestoLiveIn = Object.values(dataset).filter(c => c.happyscore >= ourscore );
-	
-	let magical_calculation_results = {
-		bestCountriestoLiveIn: bestCountriestoLiveIn,
-		geoDataforMap: {}
-	};
-	console.log(happy);
-});
+
+		// for (var i = 0; i < dataset.length; i++) {
+		// 	dataset[i]['happyscore'] = user_rank
+		// };
+		for (var i = 0; i < dataset['data'].length; i++) {
+			//variables for user rank calculations
+			var user_s_gdp = dataset['data'][i]['soc_gdp_percapita']
+			var user_s_lit = dataset['data'][i]['soc_literacy_pop']
+			var user_s_sd = dataset['data'][i]['soc_suicide_per_100k']
+			var user_s_br = dataset['data'][i]['soc_birthdarate_cbr']
+
+			var user_f_ag = dataset['data'][i]['eco_agriculture']
+			var user_f_ind = dataset['data'][i]['eco_industry']
+			var user_f_ser = dataset['data'][i]['eco_service']
+			var user_f_sel = dataset['data'][i]['eco_self_employed']
+
+			var user_m_pop = dataset['data'][i]['travel_popdensity_sqmile']
+			var user_m_cos = dataset['data'][i]['travel_coastline_ratio']
+			var user_m_inc = dataset['data'][i]['travel_incountry_growth']
+			var user_m_arr = dataset['data'][i]['travel_number_of_arrivals']
+
+			var user_c_fem = dataset['data'][i]['pop_female']
+			var user_c_avg = dataset['data'][i]['pop_avghousehold_size']
+			var user_c_typ = dataset['data'][i]['pop_householdtype_nuclear']
+			var user_c_noc = dataset['data'][i]['pop_householdtype_numberchildren']
+
+			//Calculations
+			soc_rank = (s_gdp * user_s_gdp) + (s_lit * user_s_lit) + (s_sd * user_s_sd) 
+			// + (s_br * user_s_br)
+			eco_rank = (f_ag * user_f_ag) + (f_ind * user_f_ind) + (f_ser * user_f_ser) + (f_sel * user_f_sel)
+			travel_rank = (m_pop * user_m_pop) + (m_cos * user_m_cos) + (m_inc * user_m_inc) + (m_arr * user_m_arr)
+			pop_rank = (c_fem * user_c_fem) + (c_avg * user_c_avg) + (c_typ * user_c_typ) + (c_noc * user_c_noc)
+			user_rank = Math.round((soc_rank * .35))
+			// + (eco_rank * .35) + (travel_rank * .15) + (pop_rank * .15))
+			dataset['data'][i]['user_rank'] = user_rank
+		};
+
+		var ourscore = dataset.data.overall_rank
+
+		bestCountriestoLiveIn = Object.values(dataset).filter(c => c.user_rank >= ourscore);
+
+		sorted_data = bestCountriestoLiveIn.sort(c => c.user_rank)
+
+		// console.log(sorted_data)
+
+		let magical_calculation_results = {
+			bestCountriestoLiveIn: bestCountriestoLiveIn,
+			geoDataforMap: {}
+		};
+		console.log(happy);
+	});
 };
 
 	// once you're done with the magical calculation...
@@ -80,7 +110,7 @@ function handleSubmit(event) {
 
 
 // function showOutput(magical_calculation_results) {
-	
+
 // generate some HTML (maybe through d3) - e.g Table
 	// const countrylistlocation = document.getElementById("countryList");
 

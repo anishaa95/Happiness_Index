@@ -43,6 +43,12 @@
   padding-bottom: 70px;
 }
 
+.row_odd {
+  padding-top: 40px;
+  padding-bottom: 70px;
+  background-color: rgba(7,87,112,0.2);
+}
+
 p{
   text-align: left;
   margin: 10px 35px;

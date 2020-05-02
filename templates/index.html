@@ -84,7 +84,7 @@
       <!-- header -->
         <header class="masthead">
             <div class="row h-100 align-items-center">
-              <div class="col-12">
+              <div class="col-md-12">
                 <h1 id="header" class="display-2">The Happiness Index</h1>
                 <p id="sub_title">More than simply positive mood, <em class="text-warning">happiness</em> is a state of
                   well-being that encompasses <em class="text-warning">living a good life</em>, one with a <em class="text-warning">sense
@@ -99,7 +99,7 @@
           <!-- The Project section -->
           <section>
             <div id="the_project" class="row align-items-center row_groups">
-              <div class="col-8 text_groups">
+              <div class="col-md-8 text_groups">
                 <h1 class="sub">The Project</h1>
                 <h5>The key elements of Happiness and where to find them.</h5>
                 <p>Happiness is a difficult thing to measure, but maybe you can take a journey with us and we will help you
@@ -109,7 +109,7 @@
                 country of choice, remember that country was calling for you.</p>
                 </p>
               </div>
-              <div class="col-4">
+              <div class="col-md-4">
                   <img src="../static/Images/girlinwoods_circle-500x500.png" class="img-fluid image_box" alt="Logo">
                 </div>
             </div>
@@ -120,7 +120,7 @@
           <section>
           <!-- Elements of Happiness section -->
             <div id="Hap_anchor" class="row align-items-center row_groups">
-              <div class="col-8">
+              <div class="col-md-8">
                 <h1>The 5 Elements of happiness in the human mind.</h1>
                 <p>Carl Jung in an interview with Gordon Young was asked about the basic elements or factors for happiness in
                   the human mind. Jung answered with these five elements:
@@ -156,7 +156,7 @@
           <section>
             <!-- Social Well-Being + Sliders section -->
               <div class="row row_groups">
-                <div class="col-6 text_groups">
+                <div class="col-md-6 text_groups">
                   <h1 class=>Social Well-Being</h1>
                   <h5>Societal happiness .</h5>
                   <p>
@@ -166,25 +166,10 @@
                   <p>Go ahead use the range slider to indicate how important those factors are to you when choosing a country.
                   </p>
                 </div>
-                <div class="col-6">
+                <div class="col-md-6">
                   <form class="sliders">
                     <div class="form-group">
-                      <label for="soc_gdp_percapita">GDP Per Capita</label>
-                      <input type="range" min="0" max="10" step="1" class="form-control-range" id="soc_gdp_percapita">
-                      <output class="bubble"></output>
-                    </div>
-                    <div class="form-group">
-                      <label for="soc_literacy_pop">Literacy Rate</label>
-                      <input type="range" min="0" max="10" step="1" class="form-control-range" id="soc_literacy_pop">
-                      <output class="bubble"></output>
-                    </div>
-                    <div class="form-group">
-                      <label for="soc_suicide">Suicide Rate</label>
-                      <input type="range" min="0" max="10" step="1" class="form-control-range" id="soc_suicide">
-                      <output class="bubble"></output>
-                    </div>
-                    <div class="form-group">
-                      <label for="soc_birthrate_cbr">Birth Rate</label>
+                      <label for="soc_birthrate_cbr">Social Well-Being</label>
                       <input type="range" min="0" max="10" step="1" class="form-control-range" id="soc_birthrate_cbr">
                       <output class="bubble"></output>
                     </div>
@@ -197,31 +182,7 @@
             <section>
               <!-- Financial Well-Being + Sliders section -->
                 <div class="row row_groups">
-                  <div class="col-6">
-                    <form class="sliders">
-                      <div class="form-group">
-                        <label for="eco_agriculture">Agriculture</label>
-                        <input type="range" class="form-control-range" id="eco_agriculture" min="0" max="10">
-                        <output class="bubble"></output>
-                      </div>
-                        <div class="form-group">
-                          <label for="eco_industry">Manufacturing Industry</label>
-                          <input type="range" class="form-control-range" id="eco_industry" min="0" max="10">
-                          <output class="bubble"></output>
-                        </div>
-                        <div class="form-group">
-                          <label for="eco_service">Service Industry</label>
-                          <input type="range" class="form-control-range" id="eco_service" min="0" max="10">
-                          <output class="bubble"></output>
-                        </div>
-                        <div class="form-group">
-                          <label for="eco_self_employed">Self-Employment</label>
-                          <input type="range" class="form-control-range" id="eco_self_employed" min="0" max="10">
-                          <output class="bubble"></output>
-                        </div>
-                    </form>
-                  </div>
-                  <div class="col-6">
+                  <div class="col-md-6">
                     <h1>Financial Well-Being</h1>
                     <h5>Work Satisfaction and More.</h5>
                     <p> Country indicators in this grouped analyzes of types of industries the population is engaged in. We
@@ -230,6 +191,15 @@
                     </p>
                     <p>Go ahead use the range slider to indicate which workforce type you would like to see in a country.</p>
                   </div>
+                  <div class="col-md-6">
+                    <form class="sliders">
+                      <div class="form-group">
+                        <label for="eco_self_employed">Financial Well-Being</label>
+                        <input type="range" class="form-control-range" id="eco_self_employed" min="0" max="10">
+                        <output class="bubble"></output>
+                      </div>
+                    </form>
+                  </div>
                 </div>
                 <!-- End of Financial Well-Being + Sliders section -->
               </section>
@@ -237,7 +207,7 @@
               <section>
                 <!-- Mobility Well-Being + Sliders section -->
                   <div class="row row_groups">
-                    <div class="col-6">
+                    <div class="col-md-6">
                       <h1>Mobility Well-Being</h1>
                       <h5>Perceiving beauty and nature around you.</h5>
                       <p>Country indicators in this group are all about travelling and seeing beauty all around you. We selected
@@ -247,28 +217,13 @@
                       <p>Go ahead use the range slider to indicate your preference for what is important to you when considering a
                           country to live or play in.</p>
                     </div>
-                    <div class="col-6">
+                    <div class="col-md-6">
                       <form class="sliders">
                         <div class="form-group">
-                          <label for="travel_popdensity_sqmile">Population Density</label>
-                          <input type="range" class="form-control-range" min="0" max="10" id="travel_popdensity_sqmile">
+                          <label for="travel_no_of_arrivals">Mobility Well-Being</label>
+                          <input type="range" class="form-control-range" min="0" max="10" id="travel_no_of_arrivals">
                           <output class="bubble"></output>
                         </div>
-                          <div class="form-group">
-                            <label for="travel_coastline_ratio">Coastline Length</label>
-                            <input type="range" class="form-control-range"  min="0" max="10" id="travel_coastline_ratio">
-                            <output class="bubble"></output>
-                          </div>
-                          <div class="form-group">
-                            <label for="travel_incountry_growth">Travel Incountry Growth</label>
-                            <input type="range" class="form-control-range"  min="0" max="10" id="travel_incountry_growth">
-                            <output class="bubble"></output>
-                          </div>
-                          <div class="form-group">
-                            <label for="travel_no_of_arrivals">Number of airplane arrivals</label>
-                            <input type="range" class="form-control-range"  min="0" max="10" id="travel_no_of_arrivals">
-                            <output class="bubble"></output>
-                          </div>
                       </form>
                     </div>
                   </div>
@@ -278,31 +233,7 @@
                 <section>
                   <!-- Community Well-Being + Sliders section -->
                     <div class="row row_groups">
-                      <div class="col-6">
-                        <form class="sliders">
-                          <div class="form-group">
-                            <label for="pop_female">Female Percentage</label>
-                            <input type="range" class="form-control-range" min="0" max="10" id="pop_female">
-                            <output class="bubble"></output>
-                          </div>
-                          <div class="form-group">
-                            <label for="pop_avghousehold_size">Household Size</label>
-                            <input type="range" class="form-control-range" min="0" max="10" id="pop_avghousehold_size">
-                            <output class="bubble"></output>
-                          </div>
-                          <div class="form-group">
-                            <label for="pop_householdtype_nuclear">Household Nuclear</label>
-                            <input type="range" class="form-control-range" min="0" max="10" id="pop_householdtype_nuclear">
-                            <output class="bubble"></output>
-                          </div>
-                          <div class="form-group">
-                            <label for="pop_householdtype_nochildren">Household Type - No children</label>
-                            <input type="range" class="form-control-range" min="0" max="10" id="pop_householdtype_nochildren">
-                            <output class="bubble"></output>
-                          </div>
-                        </form>
-                      </div>
-                      <div class="col-6">
+                      <div class="col-md-6">
                         <h1>Physical Well-Being</h1>
                         <h5>Where and who we live with makes you happy.</h5>
                         <p>In this group of indicators, we focused on the living conditions of the population within a country. We selected the types of
@@ -310,10 +241,19 @@
                           that is female, the average size of the household, percent of individual who are living with a
                           nuclear family and finally the percent of household that do not live with children.
                         </p>
-                          <p>Go ahead use the range slider to indicate your preference for what is important to you when considering a
-                            country population household living arrangement and percent of females.</p>
+                        <p>Go ahead use the range slider to indicate your preference for what is important to you when considering a
+                          country population household living arrangement and percent of females.</p>
+                        </div>
+                        <div class="col-md-6">
+                          <form class="sliders">
+                            <div class="form-group">
+                              <label for="pop_householdtype_nochildren">Physical Well-Being</label>
+                              <input type="range" class="form-control-range" min="0" max="10" id="pop_householdtype_nochildren">
+                              <output class="bubble"></output>
+                            </div>
+                          </form>
+                        </div>
                       </div>
-                    </div>
                     <!-- End of Physical Well-Being + Sliders section -->
                   </section>
                   <hr>
@@ -335,7 +275,7 @@
           <section>
             <div class="row row_groups">
               <!-- Map -->
-              <div class="col-5">
+              <div class="col-md-5">
                 
                 <div id="map"></div>
                 
@@ -343,7 +283,7 @@
                 <!-- End of Map Component -->
               </div>
            
-              <div class="col-7">
+              <div class="col-md-7">
                 <h1 class="display-5 text-left">What country is for you?</h1>
 
                   <!-- Wiki Search -->

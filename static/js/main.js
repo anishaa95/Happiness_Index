@@ -161,3 +161,50 @@ function handleSubmit(event) {
 // 	model_group = model_results.Result.Output
 // 	console.log(model_group)
 // 	showOutput(model_group)
+var geojson;
+var countryshapes
+// Grab data with d3
+// This takes the geojson file and turns in into a list of dictionaries
+// recreate what you did in pandas here.
+
+// for ( var i = 0; i < countryshape['features'].length; i ++){
+//     countryshape['features'][i]['properties']['overall_rank'] = happy['features'][i]['properties']['admin']
+
+
+
+d3.json(geoData, function (data) {
+	countryshapes = data
+	plotting(countryshapes)
+});
+// first step reading in the geojson
+// second step update the data from within Marcio's results
+
+// make everything below it's own function to reference in the countryshapes function.
+function plotting(d) {// console.log(data)  // Create a new choropleth layer
+	geojson = L.choropleth(d, {
+
+		// Define what  property in the features to use
+		valueProperty: "overall_rank",
+
+		// Set color scale
+		scale: ["#7B68EE", "#ADFF2F"],
+
+		// Number of breaks in step range
+		steps: 17,
+
+		// q for quartile, e for equidistant, k for k-means
+		mode: "q",
+		style: {
+			// Border color
+			color: "#fff",
+			weight: 1,
+			fillOpacity: 0.8
+		},
+
+		// Binding a pop-up to each layer
+		onEachFeature: function (feature, layer) {
+			layer.bindPopup("Country Name: " + feature.properties.admin + "<br>Our Happiness Score:<br>"
+				+ feature.properties.overall_rank);
+		}
+	}).addTo(myMap);
+}

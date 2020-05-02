@@ -1,3 +1,27 @@
+// Sliders
+
+const allRanges = document.querySelectorAll(".form-group");
+allRanges.forEach(wrap => {
+  const range = wrap.querySelector(".form-control-range");
+  const bubble = wrap.querySelector(".bubble");
+
+  range.addEventListener("input", () => {
+	setBubble(range, bubble);
+  });
+  setBubble(range, bubble);
+});
+
+function setBubble(range, bubble) {
+  const val = range.value;
+  const min = range.min ? range.min : 0;
+  const max = range.max ? range.max : 10;
+  const newVal = Number(((val - min) * 100) / (max - min));
+  bubble.innerHTML = val;
+
+  // Sorta magic numbers based on size of the native UI thumb
+  bubble.style.left = `calc(${newVal}% + (${8 - newVal * 0.15}px))`};
+
+
 var dataset = {};
 
 var button = d3.select("#button");
@@ -190,15 +214,14 @@ function handleSubmit(event) {
 }
 
 
-<<<<<<< HEAD
-		let magical_calculation_results = {
-			bestCountriestoLiveIn: bestCountriestoLiveIn,
-			geoDataforMap: {}
-		};
-		console.log(happy);
+		// let magical_calculation_results = {
+		// 	bestCountriestoLiveIn: bestCountriestoLiveIn,
+		// 	geoDataforMap: {}
+		// };
+		// console.log(happy);
 		
-	});
-};
+// 	});
+// };
 
 	// once you're done with the magical calculation...
 //   showOutput(magical_calculation_results);
@@ -275,10 +298,6 @@ var myMap = L.map("map", {
 var geoData="../static/data/world_map_rank.geojson"
 var geojson;
 var countryshapes
-=======
-
-//MAP
->>>>>>> 1db8f8ebbec0dc8608e622cdbd428c7bb9692670
 // Grab data with d3
 // This takes the geojson file and turns in into a list of dictionaries
 // recreate what you did in pandas here.

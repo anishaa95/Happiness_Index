@@ -158,7 +158,7 @@
       <hr>
       <section>
         <!-- Social Well-Being + Sliders section -->
-        <div class="row row_groups">
+        <div class="row row_odd">
           <div class="col-md-6 text_groups">
             <h1 class=>Social Well-Being</h1>
             <h5>Societal happiness .</h5>
@@ -201,226 +201,82 @@
                 <input type="range" class="form-control-range" id="eco_self_employed" min="0" max="10">
                 <output class="bubble"></output>
               </div>
-<<<<<<< HEAD
-            </div>
-            <div class="row row_groups">
-              <h1>The 4 Groups to Measure Hapinness</h1>
-              <p>
-                We grouped those elements into four broad categories and collected 16 indicators from many countries around the
-                world. The following interactive sliders will allow you as a user to select the degree of importance each
-                of these elements play a part in your life. Then we will surprise you with a country that suites your need for 
-                travel or to live in. There we are confident you find people who will be happy to see you.
-              </p>
-            </div>
-            <!-- End of Elements of Happiness section -->
-          </section>
-          <hr>
-          <section>
-            <!-- Social Well-Being + Sliders section -->
-              <div class="row row_odd">
-                <div class="col-md-6 text_groups">
-                  <h1 class=>Social Well-Being</h1>
-                  <h5>Societal happiness .</h5>
-                  <p>
-                    Country indicators in this groupe, analyzes GDP per capita, the literacy rate, the
-                    suicide rate, and the birth rate per 1,000 or crude birth rate.
-                  </p>
-                  <p>Go ahead use the range slider to indicate how important those factors are to you when choosing a country.
-                  </p>
-                </div>
-                <div class="col-md-6">
-                  <form class="sliders">
-                    <div class="form-group">
-                      <label for="soc_birthrate_cbr">Social Well-Being</label>
-                      <input type="range" min="0" max="10" step="1" class="form-control-range" id="soc_birthrate_cbr">
-                      <output class="bubble"></output>
-                    </div>
-                  </form>
-                </div>
-              </div>
-              <!-- End of Social Well-Being + Sliders section -->
-            </section>
-            <hr>
-            <section>
-              <!-- Financial Well-Being + Sliders section -->
-                <div class="row row_groups">
-                  <div class="col-md-6">
-                    <h1>Financial Well-Being</h1>
-                    <h5>Work Satisfaction and More.</h5>
-                    <p> Country indicators in this grouped analyzes of types of industries the population is engaged in. We
-                      analyzed the work force by country and collected information on the percent of the work force that is
-                      engaged in agriculture, service industry, manufacturing industry and self-employment.
-                    </p>
-                    <p>Go ahead use the range slider to indicate which workforce type you would like to see in a country.</p>
-                  </div>
-                  <div class="col-md-6">
-                    <form class="sliders">
-                      <div class="form-group">
-                        <label for="eco_self_employed">Financial Well-Being</label>
-                        <input type="range" class="form-control-range" id="eco_self_employed" min="0" max="10">
-                        <output class="bubble"></output>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-                <!-- End of Financial Well-Being + Sliders section -->
-              </section>
-              <hr>
-              <section>
-                <!-- Mobility Well-Being + Sliders section -->
-                  <div class="row row_odd">
-                    <div class="col-md-6">
-                      <h1>Mobility Well-Being</h1>
-                      <h5>Perceiving beauty and nature around you.</h5>
-                      <p>Country indicators in this group are all about travelling and seeing beauty all around you. We selected
-                        indicators that show the percent growth of in country travel, the number of airport arrivals, the percent of 
-                        coasline per square line and finally population density per sequare line.
-                      </p>
-                      <p>Go ahead use the range slider to indicate your preference for what is important to you when considering a
-                          country to live or play in.</p>
-                    </div>
-                    <div class="col-md-6">
-                      <form class="sliders">
-                        <div class="form-group">
-                          <label for="travel_no_of_arrivals">Mobility Well-Being</label>
-                          <input type="range" class="form-control-range" min="0" max="10" id="travel_no_of_arrivals">
-                          <output class="bubble"></output>
-                        </div>
-                      </form>
-                    </div>
-                  </div>
-                  <!-- End of Mobility Well-Being + Sliders section -->
-                </section>
-                <hr>
-                <section>
-                  <!-- Community Well-Being + Sliders section -->
-                    <div class="row row_groups">
-                      <div class="col-md-6">
-                        <h1>Physical Well-Being</h1>
-                        <h5>Where and who we live with makes you happy.</h5>
-                        <p>In this group of indicators, we focused on the living conditions of the population within a country. We selected the types of
-                          household as a Percentage of all households by country. Those indicators are made up of the percent of the population
-                          that is female, the average size of the household, percent of individual who are living with a
-                          nuclear family and finally the percent of household that do not live with children.
-                        </p>
-                        <p>Go ahead use the range slider to indicate your preference for what is important to you when considering a
-                          country population household living arrangement and percent of females.</p>
-                        </div>
-                        <div class="col-md-6">
-                          <form class="sliders">
-                            <div class="form-group">
-                              <label for="pop_householdtype_nochildren">Physical Well-Being</label>
-                              <input type="range" class="form-control-range" min="0" max="10" id="pop_householdtype_nochildren">
-                              <output class="bubble"></output>
-                            </div>
-                          </form>
-                        </div>
-                      </div>
-                    <!-- End of Physical Well-Being + Sliders section -->
-                  </section>
-                  <hr>
-                  <!-- Button -->
-                  <section>
-                    <div id="res_anchor" class="row">
-                      <div class="align-items-center">
-                        <h1 style="text-align: center;">Find the result</h1>
-                        <p style="text-align: center;">Now that you have made your amazing choices of what is important 
-                          to you and we have selected a country for you, go ahead click the link to find out more about it.
-                        </p>
-                        <button id="button" type="button" class="btn btn-dark">Enter</button>
-                      </div>
-                    </div>
-                  </section>
-                  <!-- End of the Button section -->
-                  <hr>
-          <!-- What country is for you + map section -->
-          <section>
-            <div class="row row_groups">
-              <!-- Map -->
-              <div class="col-md-5">
-                
-                <div id="map"></div>
-                
-                <!-- Key -->
-                <!-- End of Map Component -->
-=======
             </form>
           </div>
         </div>
-        <!-- End of Financial Well-Being + Sliders section -->
+            <!-- End of Financial Well-Being section -->
       </section>
-      <hr>
+              <hr>
       <section>
         <!-- Mobility Well-Being + Sliders section -->
-        <div class="row row_groups">
-          <div class="col-md-6">
-            <h1>Mobility Well-Being</h1>
-            <h5>Perceiving beauty and nature around you.</h5>
-            <p>Country indicators in this group are all about travelling and seeing beauty all around you. We selected
-              indicators that show the percent growth of in country travel, the number of airport arrivals, the percent
-              of
-              coasline per square line and finally population density per sequare line.
-            </p>
-            <p>Go ahead use the range slider to indicate your preference for what is important to you when considering a
-              country to live or play in.</p>
+          <div class="row row_odd">
+            <div class="col-md-6">
+              <h1>Mobility Well-Being</h1>
+              <h5>Perceiving beauty and nature around you.</h5>
+              <p>Country indicators in this group are all about travelling and seeing beauty all around you. We selected
+                indicators that show the percent growth of in country travel, the number of airport arrivals, the percent of 
+                coasline per square line and finally population density per sequare line.
+              </p>
+              <p>Go ahead use the range slider to indicate your preference for what is important to you when considering a
+                  country to live or play in.</p>
+            </div>
+            <div class="col-md-6">
+              <form class="sliders">
+                <div class="form-group">
+                  <label for="travel_no_of_arrivals">Mobility Well-Being</label>
+                  <input type="range" class="form-control-range" min="0" max="10" id="travel_no_of_arrivals">
+                  <output class="bubble"></output>
+                </div>
+              </form>
+            </div>
           </div>
-          <div class="col-md-6">
-            <form class="sliders">
-              <div class="form-group">
-                <label for="travel_no_of_arrivals">Mobility Well-Being</label>
-                <input type="range" class="form-control-range" min="0" max="10" id="travel_no_of_arrivals">
-                <output class="bubble"></output>
-              </div>
-            </form>
-          </div>
-        </div>
-        <!-- End of Mobility Well-Being + Sliders section -->
+          <!-- End of Mobility Well-Being + Sliders section -->
       </section>
-      <hr>
+                <hr>
       <section>
         <!-- Community Well-Being + Sliders section -->
-        <div class="row row_groups">
-          <div class="col-md-6">
-            <h1>Physical Well-Being</h1>
-            <h5>Where and who we live with makes you happy.</h5>
-            <p>In this group of indicators, we focused on the living conditions of the population within a country. We
-              selected the types of
-              household as a Percentage of all households by country. Those indicators are made up of the percent of the
-              population
-              that is female, the average size of the household, percent of individual who are living with a
-              nuclear family and finally the percent of household that do not live with children.
-            </p>
-            <p>Go ahead use the range slider to indicate your preference for what is important to you when considering a
-              country population household living arrangement and percent of females.</p>
-          </div>
-          <div class="col-md-6">
-            <form class="sliders">
-              <div class="form-group">
-                <label for="pop_householdtype_nochildren">Physical Well-Being</label>
-                <input type="range" class="form-control-range" min="0" max="10" id="pop_householdtype_nochildren">
-                <output class="bubble"></output>
->>>>>>> 0a06469b56a589b55145efc1d330dbbbd2fd83a8
+          <div class="row row_groups">
+            <div class="col-md-6">
+              <h1>Physical Well-Being</h1>
+              <h5>Where and who we live with makes you happy.</h5>
+              <p>In this group of indicators, we focused on the living conditions of the population within a country. We selected the types of
+                household as a Percentage of all households by country. Those indicators are made up of the percent of the population
+                that is female, the average size of the household, percent of individual who are living with a
+                nuclear family and finally the percent of household that do not live with children.
+              </p>
+              <p>Go ahead use the range slider to indicate your preference for what is important to you when considering a
+                country population household living arrangement and percent of females.</p>
               </div>
-            </form>
-          </div>
-        </div>
-        <!-- End of Physical Well-Being + Sliders section -->
+              <div class="col-md-6">
+                <form class="sliders">
+                  <div class="form-group">
+                    <label for="pop_householdtype_nochildren">Physical Well-Being</label>
+                    <input type="range" class="form-control-range" min="0" max="10" id="pop_householdtype_nochildren">
+                    <output class="bubble"></output>
+                  </div>
+                </form>
+              </div>
+            </div>
+          <!-- End of Physical Well-Being + Sliders section -->
       </section>
       <hr>
       <!-- Button -->
-      <section>
-        <div id="res_anchor" class="row">
-          <div class="align-items-center">
-            <h1 style="text-align: center;">Find the result</h1>
-            <p style="text-align: center;">Now that you have made your amazing choices of what is important
-              to you and we have selected a country for you, go ahead click the link to find out more about it.
-            </p>
-            <button id="button" type="button" class="btn btn-dark">Enter</button>
+        <section>
+          <div id="res_anchor" class="row">
+            <div class="align-items-center">
+              <h1 style="text-align: center;">Find the result</h1>
+              <p style="text-align: center;">Now that you have made your amazing choices of what is important 
+                to you and we have selected a country for you, go ahead click the link to find out more about it.
+              </p>
+              <button id="button" type="button" class="btn btn-dark">Enter</button>
+            </div>
           </div>
-        </div>
-      </section>
-      <!-- End of the Button section -->
-      <hr>
+        </section>
+        <!-- End of the Button section -->
+        <hr>
+
+      <!-- Button Return -->
+
       <!-- What country is for you + map section -->
       <section>
         <div class="row row_groups">
